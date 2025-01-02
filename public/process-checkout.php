@@ -130,9 +130,10 @@ $paymentController = new PaymentController();
 $order_id = uniqid();  // Generate a unique cart ID
 $orderController = new OrderController();
 $orderId = $orderController->createOrder($name, $email, $address, $pickup = false, $cart);
+//print_r($orderId);
 if (!$orderId) {
     http_response_code(500);
-    echo json_encode(['error' => 'Failed to create order']);
+    echo json_encode(['error' => print_r($orderId)]);
     exit;
 }
 $_SESSION['order_id'] = $orderId;
