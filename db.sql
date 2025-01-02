@@ -14,8 +14,8 @@ CREATE TABLE `orders` (
   `shipping_address` varchar(500) NOT NULL,
   `status` varchar(50) DEFAULT 'Pending',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `transaction_id` varchar(70) NOT NULL,
-  `payment_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `transaction_id` varchar(70) DEFAULT NULL,
+  `payment_date` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
