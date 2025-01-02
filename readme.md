@@ -1,8 +1,10 @@
 ## Installation
 
+Check working example - temporary link:
+https://phpstack-1383605-5136042.cloudwaysapps.com/pytb/public/
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/ecommerce-store.git
+    git clone https://github.com/mapletechno/paytabs.git
     cd ecommerce-store
     ```
 
