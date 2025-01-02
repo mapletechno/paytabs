@@ -3,22 +3,13 @@ require_once __DIR__ . '/../autoload.php';
 
 use App\Controllers\OrderController;
 use App\Controllers\PaymentController;
-/*
-use App\Utils\EnvLoader;
 
-// Load .env file
-try {
-    EnvLoader::load(__DIR__ . '/../.env');
-} catch (Exception $e) {
-    die('Error loading environment file: ' . $e->getMessage());
-}
-    */
 // Check for the payment response
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    print_r($_SESSION);
-print_r($_POST);
-echo "<br /><br />";
+   // print_r($_SESSION);
+//print_r($_POST);
+//echo "<br /><br />";
  // Process the payment response
  $payment = new PaymentController();
 if($payment->is_valid_redirect($_POST) === true) :
