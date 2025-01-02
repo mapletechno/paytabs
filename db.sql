@@ -58,7 +58,10 @@ CREATE TABLE `products` (
   `description` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
+INSERT INTO `products` (`id`, `name`, `price`, `description`) VALUES
+(1,	'Product 1',	10.00,	'Description for Product 1'),
+(2,	'Product 2',	20.00,	'Description for Product 2'),
+(3,	'Product 3',	30.00,	'Description for Product 3');
 
 DROP TABLE IF EXISTS `refunds`;
 CREATE TABLE `refunds` (
