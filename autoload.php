@@ -1,7 +1,5 @@
 <?php
 // Set the session timeout to 4 hours (14400 seconds)
-//ini_set('session.gc_maxlifetime', 14400);
-//ini_set('session.cookie_lifetime', 14400);
 session_start([
     'cookie_lifetime' => 14400,   // 1 hour
     'cookie_secure'   => true,   // Should be true on HTTPS environments
