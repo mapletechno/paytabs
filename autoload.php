@@ -1,8 +1,15 @@
 <?php
 // Set the session timeout to 4 hours (14400 seconds)
-ini_set('session.gc_maxlifetime', 14400);
-ini_set('session.cookie_lifetime', 14400);
-session_start();
+//ini_set('session.gc_maxlifetime', 14400);
+//ini_set('session.cookie_lifetime', 14400);
+
+session_start([
+    'cookie_lifetime' => 14400,   // 1 hour
+    'cookie_secure'   => true,   // Should be true on HTTPS environments
+    'cookie_httponly' => true,   // HttpOnly
+    'cookie_samesite' => 'Strict'
+]);
+//$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 

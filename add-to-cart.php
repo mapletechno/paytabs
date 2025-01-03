@@ -1,19 +1,22 @@
 <?php
-
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/autoload.php';
 
 
 
 use App\Controllers\CartController;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    
         // Read the request payload
     $request = json_decode(file_get_contents("php://input"), true);
 
+//print_r($_SESSION['csrf_token']);
+  //  exit();
     // Validate CSRF token
 if (!isset($request['csrf']) || $request['csrf'] !== $_SESSION['csrf_token']) { 
     http_response_code(403);
-    echo json_encode(["success" => false, "message" =>"bb "+$_SESSION['csrf_token']]);//
+    echo json_encode(["success" => false, "message" =>"bb ".$_SESSION['csrf_token']]);//
     exit;
 }
 

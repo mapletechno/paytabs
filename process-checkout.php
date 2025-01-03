@@ -1,6 +1,5 @@
 <?php
-
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/autoload.php';
 
 use App\Controllers\OrderController;
 use App\Controllers\CartController;
@@ -8,11 +7,12 @@ use App\Controllers\PaymentController;
 use App\Utils\EnvLoader;
 
 // Load .env file
-try {
-    EnvLoader::load(__DIR__ . '/../.env');
-} catch (Exception $e) {
-    die('Error loading environment file: ' . $e->getMessage());
-}
+    try {
+        EnvLoader::load(realpath(__DIR__ . '/.env'));
+        
+    } catch (Exception $e) {
+        die('Error loading environment file in process checkout.php: ' . $e->getMessage(). " + " .realpath(__DIR__ . '/../.env'));
+    }
 // Initialize the CartController
 $cartController = new CartController();
 

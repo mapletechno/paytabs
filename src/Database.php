@@ -8,8 +8,12 @@ class Database {
     private $conn;
 
     private function __construct() {
-        EnvLoader::load(__DIR__ . '/../.env');
-
+      // Load .env file
+    try {
+        EnvLoader::load(realpath(__DIR__ . '/../.env'));
+    } catch (\Exception $e) {
+        die('Error loading environment file: ' . $e->getMessage());
+    }
         $host = $_ENV['DB_HOST'];
         $dbname = $_ENV['DB_NAME'];
         $user = $_ENV['DB_USER'];

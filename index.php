@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/autoload.php';
 use App\Models\Product;
 //if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -15,7 +15,7 @@ $products = $productModel->getAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2.3">
 </head>
 <body>
     <header>
@@ -39,6 +39,6 @@ $products = $productModel->getAll();
          <form action="cart.php" method="GET">
                     <button id="proceed-to-cart" style="display: none; margin: 20px auto; background-color: red; padding: 15px 30px; font-size: 18px;" type="submit">Proceed to Cart</button>
                 </form>
-    <script src="js/cart.js?v=1.5.2"></script>
+    <script src="js/cart.js?v=1.6"></script>
 </body>
 </html>

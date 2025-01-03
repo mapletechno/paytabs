@@ -8,8 +8,12 @@ class OrderController {
     private $server_key;
 
     public function __construct() {
-        EnvLoader::load(__DIR__ . '/../../.env');
-
+        // Load .env file
+    try {
+        EnvLoader::load(realpath(__DIR__ . '/../../.env'));
+    } catch (\Exception $e) {
+        die('Error loading environment filex: ' . $e->getMessage());
+    }
         $this->orderModel = new Order();
         $this->server_key = $_ENV['PAYTABS_SERVER_KEY'];
     }

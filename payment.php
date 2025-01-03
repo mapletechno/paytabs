@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/autoload.php';
 
 // Ensure the iFrame URL is available
 if (!isset($_SESSION['iframe_url'])) {

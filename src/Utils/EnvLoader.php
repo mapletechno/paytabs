@@ -6,9 +6,11 @@ class EnvLoader
 {
     public static function load(string $filePath): void
     {
-        if (!file_exists($filePath)) {
+        $realPath = realpath($filePath);
+        if (!$realPath || !file_exists($realPath)) {
             throw new \RuntimeException("Environment file not found: $filePath");
         }
+        $filePath = $realPath;
 
         $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 

@@ -11,8 +11,12 @@ class PaymentController {
 
     public function __construct() {
   // Load environment variables
-  EnvLoader::load(__DIR__ . '/../../.env');
-
+ 
+    try {
+        EnvLoader::load(realpath(__DIR__ . '/../../.env'));
+    } catch (\Exception $e) {
+        die('Error loading environment file Payment Controller: ' . $e->getMessage());
+    }
         $this->paytabsBaseUrl = $_ENV['PAYTABS_BASE_URL'];
         $this->profileId = $_ENV['PAYTABS_PROFILE_ID'];
         $this->serverKey = $_ENV['PAYTABS_SERVER_KEY'];
@@ -82,7 +86,7 @@ class PaymentController {
             'framed' => true,
             'framed_return_top' => true,
             'framed_return_parent' => true,
-            'return' => 'https://phpstack-1383605-5136042.cloudwaysapps.com/pytb/public/handle-payment-response.php',
+            'return' => $_ENV['return'],//'https://phpstack-1383605-5136042.cloudwaysapps.com/pytb/public/handle-payment-response.php',
             'customer_details' =>$customerDetails
             /*
              [
