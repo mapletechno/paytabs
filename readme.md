@@ -1,25 +1,22 @@
 ## Installation
 
 Check working example - temporary link:
-https://phpstack-1383605-5136042.cloudwaysapps.com/pytb/public/
+https://phpstack-1383605-5136042.cloudwaysapps.com/pytb/
 1. Clone the repository:
     ```sh
     git clone https://github.com/mapletechno/paytabs.git
     cd ecommerce-store
     ```
 
-2. Install dependencies:
-    ```sh
-    composer install
-    ```
-
-3. Set up the database:
+2. Set up the database:
     - Create a MySQL database.
-    - Import the [db.sql](http://_vscodecontentref_/25) file into your database.
+    - Import the [db.sql] file into your database.
 
-4. Configure environment variables:
-    - Rename `.env.example` to [.env](http://_vscodecontentref_/26).
-    - Update the [.env](http://_vscodecontentref_/27) file with your database and PayTabs credentials.
+3. Configure environment variables:
+    - Rename `.env.example` to [.env]
+    - Update the [.env] file with your database and PayTabs credentials.
+    - Rename the return URL to YOUR_url/handle-payment-response.php 
+    So the handle-payment-response.php file link is your return URL
 
 ## Usage
 
