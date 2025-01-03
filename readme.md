@@ -18,6 +18,9 @@ https://phpstack-1383605-5136042.cloudwaysapps.com/pytb/
     - Rename the return URL to YOUR_url/handle-payment-response.php 
     So the handle-payment-response.php file link is your return URL
 
+4. Change access permission to the .env file
+    - chmod 400 (or 440 if your server is run by another user) for.env file for security
+
 ## Usage
 
 1. Start the PHP built-in server:
